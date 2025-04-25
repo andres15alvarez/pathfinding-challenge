@@ -107,8 +107,7 @@ npm run start:dev
 
 1. Fork or clone this repository
 2. Complete the challenge
-3. Push to your own GitHub (private or public)
-4. Share the link with us via email or submit the ZIP
+3. Make a .ZIP with your project and share it with us via email.
 
 ---
 
