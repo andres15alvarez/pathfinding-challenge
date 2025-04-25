@@ -1,25 +1,123 @@
 # 🧠 Pathfinding Challenge – NestJS Starter
 
-This is the base project for a technical challenge by GOAT Finance.
+Welcome to the technical challenge for GOAT Finance! This repository contains a starter project built in NestJS with TypeScript. Your task is to develop a microservice that calculates the optimal route between two nodes in a graph, considering dynamic constraints like blocked nodes and required stops.
 
-## 📦 Install
+---
 
-```bash
-npm install
+## 🚀 Challenge Overview
+
+You must build a RESTful API that receives a graph and dynamic constraints, then returns the most optimal path between two nodes.
+
+### 🔄 Input Example (POST JSON)
+```json
+{
+  "start": "A",
+  "end": "F",
+  "nodes": ["A", "B", "C", "D", "E", "F"],
+  "edges": [
+    {"from": "A", "to": "B", "cost": 1},
+    {"from": "A", "to": "C", "cost": 4},
+    {"from": "B", "to": "C", "cost": 2},
+    {"from": "B", "to": "D", "cost": 5},
+    {"from": "C", "to": "D", "cost": 1},
+    {"from": "D", "to": "E", "cost": 3},
+    {"from": "E", "to": "F", "cost": 1}
+  ],
+  "constraints": {
+    "blockedNodes": ["D"],
+    "requiredStops": ["C"]
+  }
+}
 ```
 
-## 🚀 Run
-
-```bash
-npm run start:dev
+### ✅ Expected Output
+```json
+{
+  "path": ["A", "B", "C", "E", "F"],
+  "totalCost": 9
+}
 ```
 
-## 🧪 Test
+---
+
+## ⚙️ Requirements
+
+- Use **NestJS** and **TypeScript**
+- Implement input validation using `class-validator` and `ValidationPipe`
+- Design modular, maintainable code (max 25 lines per function – enforced with ESLint + SonarJS)
+- Swagger UI should expose API documentation
+- Write unit and integration tests using **Jest**
+- Add detailed comments and documentation for your route-finding algorithm
+
+---
+
+## 📁 Project Structure
+
+- `src/route-finder`: Your main logic and services
+- `src/dto`: DTOs for validation and transformation
+- `src/test`: Add your unit and integration tests here
+
+---
+
+## 🧪 Test Instructions
 
 ```bash
 npm run test
 ```
 
-## 🛠 API Docs
+You should include tests for both:
+- A basic graph (like the example above)
+- A more advanced case (e.g., 20 nodes with multiple constraints)
 
-Swagger UI available at `http://localhost:3000/api` after launch.
+---
+
+## 🧼 Code Quality
+
+- ESLint and Prettier are pre-configured
+- Function complexity is checked via SonarJS rules
+- Format before pushing:
+
+```bash
+npm run lint
+npm run format
+```
+
+---
+
+## 🛠 API Documentation
+
+After running the server, visit:
+
+```
+http://localhost:3000/api
+```
+
+---
+
+## 📦 Install & Run
+
+```bash
+npm install
+npm run start:dev
+```
+
+---
+
+## 📤 Submission
+
+1. Fork or clone this repository
+2. Complete the challenge
+3. Push to your own GitHub (private or public)
+4. Share the link with us via email or submit the ZIP
+
+---
+
+## 🧠 Tips
+
+- Pick the algorithm that makes sense to you (Dijkstra, A*, DFS with memoization, etc.)
+- Justify your choices in the code or a `notes.md`
+- Focus on correctness and clarity, not just cleverness
+
+---
+
+Good luck, and have fun building! 💡
