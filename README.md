@@ -12,20 +12,32 @@ You must build a RESTful API that receives a graph and dynamic constraints, then
 ```json
 {
   "start": "A",
-  "end": "F",
-  "nodes": ["A", "B", "C", "D", "E", "F"],
+  "end": "L",
+  "nodes": [
+    "A", "B", "C", "D", "E", "F",
+    "G", "H", "I", "J", "K", "L"
+  ],
   "edges": [
-    {"from": "A", "to": "B", "cost": 1},
-    {"from": "A", "to": "C", "cost": 4},
-    {"from": "B", "to": "C", "cost": 2},
-    {"from": "B", "to": "D", "cost": 5},
-    {"from": "C", "to": "D", "cost": 1},
-    {"from": "D", "to": "E", "cost": 3},
-    {"from": "E", "to": "F", "cost": 1}
+    { "from": "A", "to": "B", "cost": 2 },
+    { "from": "A", "to": "C", "cost": 4 },
+    { "from": "B", "to": "D", "cost": 7 },
+    { "from": "B", "to": "E", "cost": 3 },
+    { "from": "C", "to": "F", "cost": 5 },
+    { "from": "D", "to": "G", "cost": 2 },
+    { "from": "E", "to": "G", "cost": 1 },
+    { "from": "F", "to": "H", "cost": 2 },
+    { "from": "G", "to": "I", "cost": 4 },
+    { "from": "H", "to": "I", "cost": 1 },
+    { "from": "I", "to": "J", "cost": 3 },
+    { "from": "J", "to": "K", "cost": 2 },
+    { "from": "K", "to": "L", "cost": 1 },
+    { "from": "H", "to": "J", "cost": 4 },
+    { "from": "E", "to": "F", "cost": 3 },
+    { "from": "C", "to": "E", "cost": 2 }
   ],
   "constraints": {
-    "blockedNodes": ["D"],
-    "requiredStops": ["C"]
+    "blockedNodes": ["G", "D"],
+    "requiredStops": ["E", "H"]
   }
 }
 ```
