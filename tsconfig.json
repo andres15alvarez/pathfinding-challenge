@@ -17,9 +17,5 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
-    "lib": ["ES6"],
-    "paths": {
-      "src/*": ["src/*"]
-    }
   }
 }
