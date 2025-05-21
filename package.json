@@ -5,9 +5,11 @@
   "scripts": {
     "start": "nest start",
     "start:dev": "nest start --watch",
+    "lint:check": "eslint '{src,test}/**/*.ts'",
     "lint": "eslint '{src,test}/**/*.ts' --fix",
     "test": "jest",
     "test:watch": "jest --watch",
+    "format:check": "prettier --check \"src/**/*.ts\"",
     "format": "prettier --write \"src/**/*.ts\"",
     "prepare": "husky"
   },

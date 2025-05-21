@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
-import { GraphModule } from './graph/graph.module';
 
 @Module({
-  imports: [GraphModule],
+  imports: [],
 })
 export class AppModule {}
