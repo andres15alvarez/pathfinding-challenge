@@ -1,4 +1,5 @@
 import { EdgeDto } from '../dto/edge.dto';
+import { OptimalPathDto } from '../dto/graph.dto';
 
 export class Dijkstra {
   private graph: Map<string, Map<string, number>> = new Map();
@@ -26,10 +27,7 @@ export class Dijkstra {
       this.graph.get(edge.from)?.set(edge.to, edge.cost);
     });
   }
-  findShortestPath(
-    start: string,
-    end: string,
-  ): { path: string[]; cost: number } {
+  findShortestPath(start: string, end: string): OptimalPathDto {
     if (!this.graph.has(start) || !this.graph.has(end)) {
       return { path: [], cost: Infinity };
     }
