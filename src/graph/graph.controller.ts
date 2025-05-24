@@ -1,8 +1,9 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { GraphService } from './graph.service';
 import { GraphDto, OptimalPathDto } from './dto/graph.dto';
-import { ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('graph')
 @Controller('graph')
 export class GraphController {
   constructor(private readonly graphService: GraphService) {}
